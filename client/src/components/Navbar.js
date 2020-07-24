@@ -12,14 +12,18 @@ function Navbar() {
     history.push('/')
   }
   return (
-    <nav>
+    <nav className='pink'>
       <div className='nav-wrapper'>
         <ul id='nav-mobile' className='right'>
           <li>
-            <NavLink to='/create'>Create</NavLink>
+            <NavLink to='/create' className='nav-link'>
+              Create
+            </NavLink>
           </li>
           <li>
-            <NavLink to='/links'>Links</NavLink>
+            <NavLink to='/links' className='nav-link'>
+              Links
+            </NavLink>
           </li>
           <li>
             <a href='/' onClick={logoutHandler}>
