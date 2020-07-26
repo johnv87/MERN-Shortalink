@@ -1,8 +1,10 @@
-// console.log('App !')
-
+//Required imports
 const express = require('express')
+//Work with default.json config file
 const config = require('config')
+//Resolve file paths module
 const path = require('path')
+//Package to connect MongoDB
 const mongoose = require('mongoose')
 
 const app = express()
@@ -25,7 +27,7 @@ const PORT = config.get('port') || 5000
 
 async function start() {
   try {
-    await mongoose.connect(config.get('mongoUri'), {
+    await mongoose.connect(config.get('mongoURI'), {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true,
