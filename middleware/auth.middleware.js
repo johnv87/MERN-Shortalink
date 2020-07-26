@@ -1,3 +1,4 @@
+//  Module auth is used in link.routes.js
 const jwt = require('jsonwebtoken')
 const config = require('config')
 
