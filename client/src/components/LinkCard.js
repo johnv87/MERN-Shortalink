@@ -3,25 +3,26 @@ import React from 'react'
 function LinkCard(props) {
   return (
     <div>
-      <h2>Link:</h2>
+      <h2>Link</h2>
       <p>
-        Your link:
+        <span>Short link:</span>
         <a href={props.link.to} target='_blank' rel='noreferrer noopener'>
           {props.link.to}
           {console.log(props.link)}
         </a>
       </p>
       <p>
-        From:
+        <span>Default rom:</span>
         <a href={props.link.from} rel='noreferrer noopener'>
           {props.link.from}
         </a>
       </p>
       <p>
-        Number of clicks: <strong>{props.link.clicks}</strong>
+        <span>Number of clicks: </span>
+        <strong>{props.link.clicks}</strong>
       </p>
       <p>
-        Date created:{' '}
+        <span>Date created: </span>
         <strong>{new Date(props.link.date).toLocaleDateString()}</strong>
       </p>
     </div>

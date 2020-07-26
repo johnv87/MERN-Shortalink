@@ -1,9 +1,15 @@
 @import "~materialize-css/dist/css/materialize.min.css";
-* {
+*, ::before, ::after {
   box-sizing: border-box;
 }
 
+html {
+  position: relative;
+  scroll-behavior: smooth;
+}
+
 body {
+  position: relative;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", Helvetica, "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -36,13 +42,13 @@ input.yellow-input:focus + label {
 .card-wrapper .card {
   border-radius: 4px;
 }
-.card-wrapper .card .card-input-wrapper input {
+.card-wrapper .card .card-input-wrapper > input {
   padding: 0 0.5rem;
 }
-.card-wrapper .card-action button {
+.card-wrapper .card-action > button {
   border-radius: 4px !important;
 }
-.card-wrapper .card-action button.btn-login {
+.card-wrapper .card-action > button.btn-login {
   margin-right: 0.5rem;
 }
 
@@ -58,13 +64,26 @@ input.yellow-input:focus + label {
   height: fit-content;
 }
 
-.nav-link.active {
+.nav-wrapper .brand-logo {
+  display: none;
+  left: initial;
+  margin-left: 1rem;
+}
+@media screen and (min-width: 768px) {
+  .nav-wrapper .brand-logo {
+    display: block;
+  }
+}
+.nav-wrapper .navbar-nav .nav-link.active {
   font-weight: 500;
   text-decoration: underline;
 }
-
-.Links-list {
+.nav-wrapper .navbar-nav .links-list {
   display: flex;
+}
+
+td > a {
+  padding: 0;
 }
 
 /*# sourceMappingURL=index.css.map */

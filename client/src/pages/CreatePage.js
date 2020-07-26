@@ -16,15 +16,21 @@ function CreatePage() {
   const pressHandler = async event => {
     if (event.key === 'Enter') {
       try {
+        //  Use useHttp hook
         const data = await request(
           './api/link/generate',
           'POST',
+          //  3
           { from: link },
           {
+            //4.  Use token from AuthContext
             Authorization: `Bearer ${auth.token}`,
           }
         )
-        console.log(auth.token)
+        // console.log(data)
+        // console.log(auth.token)
+
+        //  Redirect to created link page
         history.push(`/detail/${data.link._id}`)
       } catch (e) {}
     }

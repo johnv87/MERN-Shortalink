@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom'
 
 function LinksList(props) {
   if (!props.links.length) {
-    return <p>No links available</p>
+    return <h3>You haven't created any links yet...</h3>
   }
   return (
-    <div className='Links-list'>
-      {' '}
+    <div className='links-list'>
       <table>
         <thead>
           <tr>
+            <th>#</th>
             <th>Original</th>
             <th>Short</th>
             <th>Clicks</th>
@@ -20,9 +20,12 @@ function LinksList(props) {
         </thead>
 
         <tbody>
-          {props.links.map(e => {
+          {props.links.map((e, id) => {
+            console.log(id)
+
             return (
               <tr key={e._id}>
+                <td>{id + 1}</td>
                 <td style={{ maxWidth: '25vw', overflow: 'hidden' }}>
                   <a href={e.from} target='_blank' rel='noreferrer noopener'>
                     {e.from}

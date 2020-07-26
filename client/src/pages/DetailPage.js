@@ -9,15 +9,19 @@ function DetailPage() {
   const { token } = useContext(AuthContext)
   const { request, loading } = useHttp()
   const [link, setLink] = useState(null)
-  const linkId = useParams().id
+  const linkId = useParams().id //Got id key from routes.js
 
   const getLink = useCallback(async () => {
     try {
-      const fetched = await request(`/api/link/${linkId}`, `GET`, null, {
-        Authorization: `Bearer ${token}`,
-      })
+      const fetched = await request(
+        `/api/link/${linkId}`,
+        `GET`,
+        /*Body*/ null,
+        {
+          Authorization: `Bearer ${token}`,
+        }
+      )
       setLink(fetched)
-      console.log(setLink)
     } catch (e) {}
   }, [token, linkId, request])
 
@@ -28,7 +32,11 @@ function DetailPage() {
   if (loading) {
     return <Loader />
   }
-  return <>{!loading && link && <LinkCard link={link} />}</>
+  return (
+    <React.Fragment>
+      {!loading && link && <LinkCard link={link} />}
+    </React.Fragment>
+  )
   // return <LinkCard link={link} name='MyLink' />
 }
 

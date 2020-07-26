@@ -14,7 +14,10 @@ function Navbar() {
   return (
     <nav className='pink'>
       <div className='nav-wrapper'>
-        <ul id='nav-mobile' className='right'>
+        <a href='/' className='brand-logo'>
+          Shortalink
+        </a>
+        <ul id='nav-mobile' className='right navbar-nav'>
           <li>
             <NavLink to='/create' className='nav-link'>
               Create

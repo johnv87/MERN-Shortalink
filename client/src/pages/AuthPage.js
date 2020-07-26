@@ -26,12 +26,17 @@ function AuthPage() {
     setForm({ ...form, [evt.target.name]: evt.target.value })
   }
 
+  //  Registration handler
   const registerHandler = async () => {
     try {
       const data = await request('/api/auth/register', 'POST', { ...form })
+
+      console.log(data)
       message(data.message)
     } catch (e) {}
   }
+
+  //  Login handler
   const loginHandler = async () => {
     try {
       const data = await request('/api/auth/login', 'POST', { ...form })
@@ -43,10 +48,12 @@ function AuthPage() {
     <div className='row'>
       <div className='col s6 offset-s3'>
         <h2>Short Link App</h2>
+        {/*Authorization card*/}
         <div className='card-wrapper'>
           <div className='card blue darken-1'>
             <div className='card-content white-text'>
               <span className='card-title'>Authorization</span>
+              {/*Email Input*/}
               <div className='card-input-wrapper'>
                 <label htmlFor='email'>Email</label>
                 <input
@@ -59,6 +66,7 @@ function AuthPage() {
                   onChange={changeHandler}
                 />
               </div>
+              {/*Password input*/}
               <div className='card-input-wrapper'>
                 <label htmlFor='password'>Password</label>
                 <input
@@ -73,6 +81,7 @@ function AuthPage() {
               </div>
             </div>
           </div>
+          {/*Button group*/}
           <div className='card-action'>
             <button
               className='btn yellow darken-4 btn-login'

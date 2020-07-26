@@ -27,7 +27,9 @@ function LinksPage() {
     return <Loader />
   }
 
-  return <>{!loading && <LinksList links={links} />}</>
+  return (
+    <React.Fragment>{!loading && <LinksList links={links} />}</React.Fragment>
+  )
 }
 
 export default LinksPage

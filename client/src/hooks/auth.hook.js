@@ -4,8 +4,9 @@ const storageName = 'userData'
 
 export const useAuth = () => {
   const [token, setToken] = useState(null)
-  const [ready, setReady] = useState(false)
   const [userId, setUserId] = useState(null)
+  //  Prevent redirecting to CREATE page on refresh
+  const [ready, setReady] = useState(false)
 
   const login = useCallback((jwtToken, id) => {
     setToken(jwtToken)
@@ -27,6 +28,8 @@ export const useAuth = () => {
   }, [])
 
   useEffect(() => {
+    //  When the page is loaded check localStorage
+    //  if there is token and userId perform login automatically
     const data = JSON.parse(localStorage.getItem(storageName))
 
     if (data && data.token) {

@@ -1,5 +1,6 @@
 const { Router } = require('express')
 const config = require('config')
+//  Install shortid (npm i shortid)
 const shortId = require('shortid')
 const Link = require('../models/Link')
 const auth = require('../middleware/auth.middleware')
@@ -37,7 +38,7 @@ router.post('/generate', auth, async (req, res) => {
     })
   }
 })
-router.get('/', auth, async (req, res) => {
+router.get('/', /*Middleware*/ auth, async (req, res) => {
   try {
     const links = await Link.find({ owner: req.user.userId })
     await res.json(links)
