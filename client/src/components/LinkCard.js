@@ -8,7 +8,7 @@ function LinkCard(props) {
         <span>Short link:</span>
         <a href={props.link.to} target='_blank' rel='noreferrer noopener'>
           {props.link.to}
-          {console.log(props.link)}
+          {/*{console.log(props.link)}*/}
         </a>
       </p>
       <p>
