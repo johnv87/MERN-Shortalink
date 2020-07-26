@@ -1,0 +1,6 @@
+{
+  "port": 80,
+  "mongoURI": "mongodb+srv://johnv87:rufus-pen-soap@cluster0-0h1fu.azure.mongodb.net/MERN?retryWrites=true&w=majority",
+  "jwtSecret": "johnv87 mern",
+  "baseUrl": "http://YOUR.REGISTERED.DOMAIN.com"
+}
