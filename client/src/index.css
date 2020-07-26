@@ -66,7 +66,8 @@ input.yellow-input:focus + label {
 
 .nav-wrapper .brand-logo {
   display: none;
-  left: initial;
+  left: 0;
+  transform: translate(0);
   margin-left: 1rem;
 }
 @media screen and (min-width: 768px) {
