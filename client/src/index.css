@@ -33,7 +33,16 @@ input.yellow-input:focus + label {
   color: #ffeb3b !important;
 }
 
-.btn-login {
+.card-wrapper .card {
+  border-radius: 4px;
+}
+.card-wrapper .card .card-input-wrapper input {
+  padding: 0 0.5rem;
+}
+.card-wrapper .card-action button {
+  border-radius: 4px !important;
+}
+.card-wrapper .card-action button.btn-login {
   margin-right: 0.5rem;
 }
 

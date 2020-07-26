@@ -42,12 +42,12 @@ function AuthPage() {
   return (
     <div className='row'>
       <div className='col s6 offset-s3'>
-        <h2>Shorten a link</h2>
-        <div>
+        <h2>Short Link App</h2>
+        <div className='card-wrapper'>
           <div className='card blue darken-1'>
             <div className='card-content white-text'>
               <span className='card-title'>Authorization</span>
-              <div>
+              <div className='card-input-wrapper'>
                 <label htmlFor='email'>Email</label>
                 <input
                   placeholder='Enter Email'
@@ -59,7 +59,7 @@ function AuthPage() {
                   onChange={changeHandler}
                 />
               </div>
-              <div>
+              <div className='card-input-wrapper'>
                 <label htmlFor='password'>Password</label>
                 <input
                   placeholder='Enter Password'
@@ -75,13 +75,14 @@ function AuthPage() {
           </div>
           <div className='card-action'>
             <button
-              className='btn yellow darken-4'
+              className='btn yellow darken-4 btn-login'
               disabled={loading}
               onClick={loginHandler}
             >
               Log In
             </button>
             <button
+              id='register'
               className='btn grey lighten-1'
               disabled={loading}
               onClick={registerHandler}

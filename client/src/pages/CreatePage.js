@@ -33,6 +33,7 @@ function CreatePage() {
   return (
     <div className='row'>
       <div className='col s8 offset-s2' style={{ padding: '2rem' }}>
+        <h2>Create your short link</h2>
         <div>
           <label htmlFor='link'>Type your link</label>
           <input
@@ -44,8 +45,10 @@ function CreatePage() {
             onKeyPress={pressHandler}
           />
         </div>
+        <span>
+          <small>Press 'Enter' to create link</small>
+        </span>
       </div>
-      <h2>Create Page</h2>
     </div>
   )
 }
