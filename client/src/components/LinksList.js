@@ -21,8 +21,6 @@ function LinksList(props) {
 
         <tbody>
           {props.links.map((e, id) => {
-            console.log(id)
-
             return (
               <tr key={e._id}>
                 <td>{id + 1}</td>

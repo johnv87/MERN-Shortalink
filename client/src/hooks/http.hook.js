@@ -19,10 +19,11 @@ export const useHttp = () => {
         }
         //  When request to server finished we have response object
         const response = await fetch(url, { method, body, headers })
-        console.log(response)
+        // console.log(response)
+
         //  Unparse response
         const data = await response.json()
-        console.log(data)
+        // console.log(data)
 
         if (!response.ok) {
           throw new Error(data.message || 'Something went wrong')
@@ -32,7 +33,7 @@ export const useHttp = () => {
         setLoading(false)
         return data
       } catch (e) {
-        console.log(e.message)
+        // console.log(e.message)
         setLoading(false)
         setError(e.message)
         throw e
